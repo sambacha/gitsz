@@ -1,0 +1,4 @@
+- migrate to @oclif for command line
+- migrate to typescript 
+- add additional edge case tests
+- provide additional tooling for creating hermetic artifacts

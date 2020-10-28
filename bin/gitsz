@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const yargs = require('yargs')
-    .usage('Usage: git secure-tag [-s | -u <keyid>] [-m <msg>] \n' +
+    .usage('Usage: gitsz [-s | -u <keyid>] [-m <msg>] \n' +
            '                      <tagname> [<commit> | <object>]')
     .command('hash', 'print hash of repository contents')
     .alias('v', 'verify')
