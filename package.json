@@ -1,0 +1,42 @@
+{
+  "name": "gitsz",
+  "version": "2.3.1",
+  "description": "Git tags with higher level of security",
+  "main": "lib/gitsz.js",
+  "bin": {
+    "gitsz": "bin/gitsz"
+  },
+  "scripts": {
+    "lint": "npx prettier --loglevel debug --write . ",
+    "format": "npx eslint --debug --color --ext lib/gitsz.js",
+    "test": "tape test/*-test.js && npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sambacha/gitsz.git"
+  },
+  "keywords": [
+    "git",
+    "secure",
+    "tag",
+    "sha256",
+    "gpg",
+    "signature",
+    "verify",
+    "sign"
+  ],
+  "author": "SEE CONTRIBUTORS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sambacha/gitsz/issues"
+  },
+  "homepage": "https://github.com/sambacha/gitsz#readme",
+  "dependencies": {
+    "async": "^3.2.0",
+    "yargs": "^16.1.0"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "tape": "^5.0.1"
+  }
+}
