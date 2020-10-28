@@ -1,19 +1,19 @@
 {
-  "name": "git-secure-tag",
+  "name": "gitsz",
   "version": "2.3.1",
   "description": "Git tags with higher level of security",
   "main": "lib/git-secure-tag.js",
   "bin": {
-    "git-secure-tag": "bin/git-secure-tag"
+    "git-secure-tag": "bin/gitsz"
   },
   "scripts": {
-    "lint": "make lint",
-    "format": "make format",
+    "lint": "npx prettier --loglevel debug --write . ",
+    "format": "npx eslint --debug --color --ext lib/git-secure-tag.js",
     "test": "tape test/*-test.js && npm run lint"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/indutny/git-secure-tag.git"
+    "url": "git+ssh://git@github.com/sambacha/git-secure-tag.git"
   },
   "keywords": [
     "git",
@@ -25,19 +25,18 @@
     "verify",
     "sign"
   ],
-  "author": "Fedor Indutny <fedor@indutny.com>",
+  "author": "Fedor sambacha <fedor@sambacha.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/indutny/git-secure-tag/issues"
+    "url": "https://github.com/sambacha/git-secure-tag/issues"
   },
-  "homepage": "https://github.com/indutny/git-secure-tag#readme",
+  "homepage": "https://github.com/sambacha/git-secure-tag#readme",
   "dependencies": {
-    "async": "^2.0.0-rc.6",
-    "yargs": "^4.7.1"
+    "async": "^3.2.0",
+    "yargs": "^16.1.0"
   },
   "devDependencies": {
-    "eslint": "^3.0.1",
-    "rimraf": "^2.5.3",
-    "tape": "^4.6.0"
+    "rimraf": "^3.0.2",
+    "tape": "^5.0.1"
   }
 }

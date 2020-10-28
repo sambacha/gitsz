@@ -1,13 +1,10 @@
-SRC_FILES=
-SRC_FILES+= lib/*.js
-SRC_FILES+= lib/**/*.js
 
-SRC_FILES+= test/*.js
+define npm_script_targets
+TARGETS := $(shell node -e 'for (var k in require("./package.json").scripts) {console.log(k.replace(/:/g, "-"));}')
+$$(TARGETS):
+	npm run $(subst -,:,$(MAKECMDGOALS))
 
-lint:
-	eslint $(SRC_FILES)
+.PHONY: $$(TARGETS)
+endef
 
-format:
-	eslint --fix $(SRC_FILES)
-
-.PHONY: lint format
+$(eval $(call npm_script_targets))

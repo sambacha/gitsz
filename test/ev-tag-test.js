@@ -12,7 +12,7 @@ tape('evtag interop', (t) => {
     'git://github.com/cgwalters/git-evtag.git',
     'git://github.com/ostreedev/ostree.git',
     'git://github.com/GNOME/gnome-terminal.git',
-    'https://gitlab.com/fidencio/libosinfo.git'
+    'https://gitlab.com/fidencio/libosinfo.git',
   ];
 
   repos.forEach((url) => {
@@ -23,8 +23,10 @@ tape('evtag interop', (t) => {
     // Verify tags
     const node = process.execPath;
     tags.forEach((tag) => {
-      t.doesNotThrow(() => cmd(node, [ cli, '--insecure', '-v', tag ]),
-                     `tag ${tag} of ${url} should validate`);
+      t.doesNotThrow(
+        () => cmd(node, [cli, '--insecure', '-v', tag]),
+        `tag ${tag} of ${url} should validate`,
+      );
     });
 
     fixtures.destroy();

@@ -1,4 +1,5 @@
 # git-secure-tag
+
 [![NPM version](https://badge.fury.io/js/git-secure-tag.svg)](http://badge.fury.io/js/git-secure-tag)
 [![Build Status](https://secure.travis-ci.org/indutny/git-secure-tag.svg)](http://travis-ci.org/indutny/git-secure-tag)
 
