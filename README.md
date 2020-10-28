@@ -3,41 +3,39 @@
 > a more deterministic and secure source artifact creation process
 
 - [gitsz](#gitsz)
-  * [Motivation](#motivation)
-    + [Replacing tarballs](#replacing-tarballs)
+
+  - [Motivation](#motivation)
+    - [Replacing tarballs](#replacing-tarballs)
       - [Cannonical Git Commit](#cannonical-git-commit)
       - [Usage](#usage)
-        * [generate tag](#generate-tag)
-        * [verify tag](#verify-tag)
-        * [git secure tag](#git-secure-tag)
-    + [Reference Case Study](#reference-case-study)
-  * [Implementation](#implementation)
-  * [Installation](#installation)
-  * [Usage](#usage-1)
-  * [Implementation and Contributors](#implementation-and-contributors)
-  * [License](#license)
-  
+        - [generate tag](#generate-tag)
+        - [verify tag](#verify-tag)
+        - [git secure tag](#git-secure-tag)
+    - [Reference Case Study](#reference-case-study)
+  - [Implementation](#implementation)
+  - [Installation](#installation)
+  - [Usage](#usage-1)
+  - [Implementation and Contributors](#implementation-and-contributors)
+  - [License](#license)
 
 ## Motivation
 
-> $GIT_TAG should be the primary artifact
+> \$GIT_TAG should be the primary artifact
 
-With the current design, it is necessary to use Git to clone the repository and use Git to walk the trees. 
+With the current design, it is necessary to use Git to clone the repository and use Git to walk the trees.
 This means that Git is exposed to untrusted data before the signature is verified, making it part of the TCB (Trusted Computing Base).
 
->  This is not desirable because Git has a large footprint in the engineering ecosystem
+> This is not desirable because Git has a large footprint in the engineering ecosystem
 
-At least, the recommended steps should verify the signature before a checkout is performed 
+At least, the recommended steps should verify the signature before a checkout is performed
 (which is probably the most risky operation because it involves partially attacker-controlled file system operations).
 
-
-The point of signing a `git` commit is to authenticate history to future consumers so the fact that history was 'tampered with deliberately' 
+The point of signing a `git` commit is to authenticate history to future consumers so the fact that history was 'tampered with deliberately'
 needs to be preserved in the signature because it is possible to alter the exact semantics/content of the commit.
 
 > `git` uses SHA-1 hashes when signing tag. SHA-1 is generally deprecated and is not a collision-safe anymore (though, ~~collisions are yet to come~~ pre-image attack is yet to come).
 
-
-### Replacing tarballs 
+### Replacing tarballs
 
 What gitsz (i.e. git-evtag) implements is an algorithm for providing a strong checksum over the complete source objects for the target:
 
@@ -46,13 +44,13 @@ What gitsz (i.e. git-evtag) implements is an algorithm for providing a strong ch
 +commit (+ trees + blobs + submodules)
 ```
 
-Then it's integrated with GPG for end-to-end verification. (Although, one could also wrap the checksum in X.509 or some other 
+Then it's integrated with GPG for end-to-end verification. (Although, one could also wrap the checksum in X.509 or some other
 public/private signature solution).
 
-This is similar to what project distributors often accomplish by using git archive, or make dist, or similar tools to generate 
+This is similar to what project distributors often accomplish by using git archive, or make dist, or similar tools to generate
 a tarball, and then checksumming that, and (ideally) providing a GPG signature covering it.
 
-If the checksum is not reproducible, it becomes much more difficult to easily and reliably verify that a generated tarball 
+If the checksum is not reproducible, it becomes much more difficult to easily and reliably verify that a generated tarball
 contains the same source code as a particular git commit.
 
 #### Cannonical Git Commit
@@ -62,6 +60,7 @@ $ GIT_AUTHOR_DATE="Thu, 01 Jan 1970 00:00:00 +0000" GIT_COMMITTER_DATE="Thu, 01 
 ```
 
 #### Usage
+
  <br>
 `$ gitsz `
 
@@ -113,9 +112,9 @@ bdf3cd8f2a4e29a5cf86cbd7fe815583b0e78b4efe4759fc7204b5dfb6fb928fde138f7fcfcae19e
 
 [github/sambacha/BPBDTL/commit/21687a1a7d5f3c26e9c06fa23547fca4a09178a2](https://github.com/sambacha/BPBDTL/commit/21687a1a7d5f3c26e9c06fa23547fca4a09178a2)
 
-- In this scenario, I signed a commit at approx. 0 UNIX EPOCH time using another user's credentials, and by credentials I mean just using their `email@address` and 
-`user name`. No other passwords, etc, is required. Although GitHub does not say `verified` for the commit, it displays the user's avatar, and may be overlooked 
-without more careful examination. 
+- In this scenario, I signed a commit at approx. 0 UNIX EPOCH time using another user's credentials, and by credentials I mean just using their `email@address` and
+  `user name`. No other passwords, etc, is required. Although GitHub does not say `verified` for the commit, it displays the user's avatar, and may be overlooked
+  without more careful examination.
 
 ## Implementation
 
