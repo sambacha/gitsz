@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+var deterministic = require('./lib/taruerreotype.js')
+
+process.stdin
+  .pipe(deterministic())
+  .pipe(process.stdout)
+  
