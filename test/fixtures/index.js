@@ -10,7 +10,7 @@ const rimraf = require('rimraf');
 const gst = require('../../');
 const GIT = gst.GIT;
 
-const cli = path.join(__dirname, '..', '..', 'bin', 'git-secure-tag');
+const cli = path.join(__dirname, '..', '..', 'bin', 'gitsz');
 exports.cli = cli;
 
 const repo = path.join(__dirname, 'repo');
