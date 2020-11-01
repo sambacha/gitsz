@@ -1,4 +1,3 @@
-
 # travis-ci
 os: linux
 dist: xenial
@@ -6,13 +5,13 @@ sudo: true
 
 language: node_js
 node_js:
-- '10'
-- '12'
+  - '10'
+  - '12'
 
 git:
   quiet: true
 
 cache: npm
 
-install: nnpm install 
+install: nnpm install
 scripts: npm run-script test
