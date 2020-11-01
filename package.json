@@ -7,9 +7,9 @@
     "gitsz": "bin/gitsz"
   },
   "scripts": {
-    "lint": "npx prettier --loglevel debug --write . ",
+    "lint": "prettier --loglevel debug --write . ",
     "format": "npx eslint --debug --color --ext lib/gitsz.js",
-    "test": "tape test/*-test.js && npm run lint"
+    "test": "tape test/*-test.js"
   },
   "repository": {
     "type": "git",
