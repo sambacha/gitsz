@@ -9,6 +9,8 @@
   "scripts": {
     "lint": "prettier --loglevel debug --write . ",
     "format": "npx eslint --debug --color --ext lib/gitsz.js",
+    "report-test": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "coverage": "nyc npm run test",
     "test": "tape test/*-test.js"
   },
   "repository": {
@@ -36,6 +38,7 @@
     "yargs": "^16.1.0"
   },
   "devDependencies": {
+    "nyc": "^15.1.0",
     "rimraf": "^3.0.2",
     "tape": "^5.0.1"
   }

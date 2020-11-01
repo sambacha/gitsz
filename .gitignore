@@ -11,3 +11,8 @@ build/
 *.tgz
 *.tar
 *.zip
+coverage
+*.lcov
+
+# nyc test coverage
+.nyc_output
