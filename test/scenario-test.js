@@ -25,12 +25,12 @@ tape('git secure tag', (t) => {
   t.throws(
     () => cmd(node, [cli, '--insecure', '-v', 'invalid-1']),
     /EVTag.*mismatch/,
-    'invalid evtag hash',
+    'invalid evtag hash'
   );
   t.throws(
     () => cmd(node, [cli, '--insecure', '-v', 'invalid-2']),
     /Secure-Tag.*mismatch/,
-    'invalid legacy hash',
+    'invalid legacy hash'
   );
   t.throws(() => cmd(node, [cli, '--insecure', '-v', 'invalid-3']), /No.*found/, 'no hash at all');
 

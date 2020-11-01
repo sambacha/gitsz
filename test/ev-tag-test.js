@@ -25,7 +25,7 @@ tape('evtag interop', (t) => {
     tags.forEach((tag) => {
       t.doesNotThrow(
         () => cmd(node, [cli, '--insecure', '-v', tag]),
-        `tag ${tag} of ${url} should validate`,
+        `tag ${tag} of ${url} should validate`
       );
     });
 

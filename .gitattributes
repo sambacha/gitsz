@@ -1,0 +1,12 @@
+package-lock.json merge=npm-merge-driver
+npm-shrinkwrap.json merge=npm-merge-driver
+*.gpg filter=gpg diff=gpg
+*.asc filter=gpg diff=gpg
+# date
+date*.txt filter=dater
+*.html   text diff=html
+*.sh     eol=lf
+*.bash   eol=lf
+*.zsh    eol=lf
+*.png diff=exif
+*.svg diff=exif

@@ -27,7 +27,7 @@ tape('js api', (t) => {
           (tag, callback) => {
             api.sign(tag.name, tag.ref, { legacy: tag.legacy, insecure: true }, callback);
           },
-          callback,
+          callback
         );
       },
       (callback) => {
@@ -36,7 +36,7 @@ tape('js api', (t) => {
           (tag, callback) => {
             api.verify(tag.name, { insecure: true }, callback);
           },
-          callback,
+          callback
         );
       },
       (results, callback) => {
@@ -50,7 +50,7 @@ tape('js api', (t) => {
               callback(null, { err: err, result: result });
             });
           },
-          callback,
+          callback
         );
       },
       (results, callback) => {
@@ -67,6 +67,6 @@ tape('js api', (t) => {
     (err) => {
       fixtures.destroy();
       t.end(err);
-    },
+    }
   );
 });
