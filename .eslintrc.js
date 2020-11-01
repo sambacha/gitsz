@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 module.exports = {
   extends: ['airbnb', 'plugin:prettier/recommended', 'prettier/react'],
   env: {

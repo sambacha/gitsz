@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+
+// SPDX-Licesne-Identifier: MIT
 'use strict';
 
 const tape = require('tape');

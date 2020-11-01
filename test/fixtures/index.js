@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 'use strict';
 
 const fs = require('fs');
