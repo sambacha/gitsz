@@ -11,7 +11,7 @@
     "format": "npx eslint --debug --color --ext lib/gitsz.js",
     "report-test": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "coverage": "nyc npm run test",
-    "test": "tape test/*-test.js"
+    "test": "nyc tape tests/*.js | tap-nyc"
   },
   "repository": {
     "type": "git",
@@ -40,6 +40,7 @@
   "devDependencies": {
     "nyc": "^15.1.0",
     "rimraf": "^3.0.2",
+    "tap-nyc": "^1.0.3",
     "tape": "^5.0.1"
   }
 }
