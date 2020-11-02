@@ -38,6 +38,7 @@
     "yargs": "^16.1.0"
   },
   "devDependencies": {
+    "codecov": "^3.8.0",
     "nyc": "^15.1.0",
     "rimraf": "^3.0.2",
     "tap-nyc": "^1.0.3",
