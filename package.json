@@ -1,0 +1,43 @@
+{
+  "name": "git-sz",
+  "version": "1.0.0,
+  "description": "Git tags with higher level of security",
+  "main": "lib/git-sz.js",
+  "bin": {
+    "git-sz": "bin/git-sz"
+  },
+  "scripts": {
+    "lint": "make lint",
+    "format": "make format",
+    "test": "tape test/*-test.js && npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/indutny/git-sz.git"
+  },
+  "keywords": [
+    "git",
+    "secure",
+    "tag",
+    "sha256",
+    "gpg",
+    "signature",
+    "verify",
+    "sign"
+  ],
+  "author": "Fedor Indutny <fedor@indutny.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/indutny/git-sz/issues"
+  },
+  "homepage": "https://github.com/indutny/git-sz#readme",
+  "dependencies": {
+    "async": "^2.0.0-rc.6",
+    "yargs": "^4.7.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.0.1",
+    "rimraf": "^2.5.3",
+    "tape": "^4.6.0"
+  }
+}
