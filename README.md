@@ -1,8 +1,6 @@
+## Motivation
 
-Motivation
-----------
-
-> $GIT\_TAG should be the primary artifact
+> \$GIT_TAG should be the primary artifact
 
 With the current design, it is necessary to use Git to clone the
 repository and use Git to walk the trees. This means that Git is exposed
@@ -18,7 +16,7 @@ because it involves partially attacker-controlled file system
 operations).
 
 The point of signing a `git` commit is to authenticate history to future
-consumers so the fact that history was *tampered with deliberately*
+consumers so the fact that history was _tampered with deliberately_
 needs to be preserved in the signature because it is possible to alter
 the exact semantics/content of the commit.
 
@@ -50,6 +48,7 @@ easily and reliably verify that a generated tarball contains the same
 source code as a particular git commit.
 
 #### Cannonical Git Commit
+
 ```bash
     $ GIT_AUTHOR_DATE="Thu, 01 Jan 1970 00:00:00 +0000" GIT_COMMITTER_DATE="Thu, 01 Jan 1970 00:00:00 +0000" git commit --allow-empty -m 'Initial commit'
 ```
@@ -95,28 +94,25 @@ source code as a particular git commit.
 
 [github/sambacha/BPBDTL/commit/21687a1a7d5f3c26e9c06fa23547fca4a09178a2](https://github.com/sambacha/BPBDTL/commit/21687a1a7d5f3c26e9c06fa23547fca4a09178a2)
 
--   In this scenario, I signed a commit at approx. 0 UNIX EPOCH time
-    using another user’s credentials, and by credentials I mean just
-    using their `email@address` and `user name`. No other passwords,
-    etc, is required. Although GitHub does not say `verified` for the
-    commit, it displays the user’s avatar, and may be overlooked without
-    more careful examination.
+- In this scenario, I signed a commit at approx. 0 UNIX EPOCH time
+  using another user’s credentials, and by credentials I mean just
+  using their `email@address` and `user name`. No other passwords,
+  etc, is required. Although GitHub does not say `verified` for the
+  commit, it displays the user’s avatar, and may be overlooked without
+  more careful examination.
 
-Implementation
---------------
+## Implementation
 
 `gitsz` runs `cat-file` recursively for each entry (sorted
 alphabetically), enters submodules (if present), and hashes
 file/directory names, file contents, and submodules (recursively again)
 into a resulting `Git-EVTag-v0-SHA512: ...` SHA512 digest.
 
-Installation
-------------
+## Installation
 
     npm install -g gitsz
 
-Usage
------
+## Usage
 
     # Sign
     gitsz v1.20.7 -m "My tag annotation"
@@ -124,8 +120,7 @@ Usage
     # Verify
     gitsz -v v1.20.7
 
-Implementation and Contributors
--------------------------------
+## Implementation and Contributors
 
 Largely inspired by:
 
@@ -133,7 +128,6 @@ Largely inspired by:
 
 Fedor Indutny, 2016.
 
-License
--------
+## License
 
 SPDX-License-Identifier: MIT
