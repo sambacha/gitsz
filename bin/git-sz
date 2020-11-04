@@ -1,6 +1,8 @@
 #!/usr/bin/env node
+// SPDX-License-Identifier: MIT
+// TODO add some examples
 const yargs = require('yargs/yargs')(process.argv.slice(2))
-    .usage('Usage: git secure-tag [-s | -u <keyid>] [-m <msg>] \n' +
+    .usage('Usage: gitsz [-s | -u <keyid>] [-m <msg>] \n' +
            '                      <tagname> [<commit> | <object>]')
     .command('hash', 'print hash of repository contents')
     .alias('v', 'verify')
