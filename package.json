@@ -7,9 +7,9 @@
     "git-sz": "bin/git-sz"
   },
   "scripts": {
-    "lint": "make lint",
-    "format": "make format",
-    "test": "tape test/*-test.js && npm run lint"
+    "prettier": "npx prettier --write . ",
+    "eslint": "./node_modules/.bin/eslint .",
+    "test": "tape test/*-test.js"
   },
   "repository": {
     "type": "git",
