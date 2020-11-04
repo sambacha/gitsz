@@ -33,11 +33,11 @@
   "homepage": "https://github.com/sambacha/git-sz#readme",
   "dependencies": {
     "async": "^2.6.3",
-    "yargs": "^4.8.1"
+    "yargs": "^16.1.0"
   },
   "devDependencies": {
-    "eslint": "^3.0.1",
+    "eslint": "^7.12.1",
     "rimraf": "^2.7.1",
-    "tape": "^4.6.0"
+    "tape": "^5.0.1"
   }
 }
