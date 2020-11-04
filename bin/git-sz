@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const yargs = require('yargs')
+const yargs = require('yargs/yargs')(process.argv.slice(2))
     .usage('Usage: git secure-tag [-s | -u <keyid>] [-m <msg>] \n' +
            '                      <tagname> [<commit> | <object>]')
     .command('hash', 'print hash of repository contents')
