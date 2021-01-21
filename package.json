@@ -36,8 +36,8 @@
     "yargs": "^16.1.0"
   },
   "devDependencies": {
-    "eslint": "^7.12.1",
-    "rimraf": "^2.7.1",
-    "tape": "^5.0.1"
+    "eslint": "7.12.1",
+    "rimraf": "2.7.1",
+    "tape": "5.0.1"
   }
 }
