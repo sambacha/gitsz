@@ -39,6 +39,7 @@
   "devDependencies": {
     "codecov": "^3.8.1",
     "eslint": "7.21.0",
+    "nyc": "^15.1.0",
     "rimraf": "3.0.2",
     "tape": "5.2.2"
   }
