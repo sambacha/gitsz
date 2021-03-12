@@ -1,0 +1,3 @@
+[submodule "test/fixtures/repo"]
+	path = test/fixtures/repo
+	url = https://github.com/ostreedev/ostree.git
