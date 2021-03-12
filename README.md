@@ -1,6 +1,13 @@
-## Motivation
+# [gitsz](#)
 
-> \$GIT_TAG should be the primary artifact
+> git secure tag 
+
+
+[![ci](https://github.com/sambacha/gitsz/actions/workflows/ci.yml/badge.svg)](https://github.com/sambacha/gitsz/actions/workflows/ci.yml)
+
+## Abstract
+
+> `$GIT_TAG` should be the primary artifact
 
 With the current design, it is necessary to use Git to clone the
 repository and use Git to walk the trees. This means that Git is exposed
@@ -70,12 +77,12 @@ source code as a particular git commit.
 
 ##### generate tag
 
-`git secure-tag -s v2.5.0`
+`gitsz -s v2.5.0`
 
 ###### verify tag
 
 ```bash
-    $ git secure-tag -v v2.5.0
+    $ gitsz -v v2.5.0
     gpg: Signature made Wed Oct 28 00:16:58 2020 PDT
     gpg:                using RSA key C00B2090F23C5629029111CBF5D2A7216C51FB94
     gpg: Good signature from "sam bacha <sam@freighttrust.com>" [ultimate]
@@ -101,7 +108,7 @@ source code as a particular git commit.
   commit, it displays the user’s avatar, and may be overlooked without
   more careful examination.
 
-## Implementation
+### Implementation
 
 `gitsz` runs `cat-file` recursively for each entry (sorted
 alphabetically), enters submodules (if present), and hashes
