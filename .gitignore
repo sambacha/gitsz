@@ -6,3 +6,5 @@ node_modules
 *.debug
 *.tar.gz
 *.zip
+.nyc_output/
+test/fixtures/

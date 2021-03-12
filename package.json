@@ -9,7 +9,9 @@
   "scripts": {
     "prettier": "npx prettier --write . ",
     "eslint": "./node_modules/.bin/eslint .",
-    "test": "tape test/*-test.js"
+    "test": "npx tape test/*-test.js",
+    "posttest": "tap --coverage-report=text-lcov | codecov"
+
   },
   "repository": {
     "type": "git",
@@ -36,6 +38,7 @@
     "yargs": "^16.1.0"
   },
   "devDependencies": {
+    "codecov": "^3.8.1",
     "eslint": "7.21.0",
     "rimraf": "3.0.2",
     "tape": "5.2.2"
