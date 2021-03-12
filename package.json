@@ -2,20 +2,19 @@
   "name": "gitsz",
   "version": "1.0.3",
   "description": "Git tags with higher level of security",
-  "main": "lib/git-sz.js",
+  "main": "lib/gitsz.js",
   "bin": {
-    "git-sz": "bin/git-sz"
+    "gitsz": "bin/gitsz"
   },
   "scripts": {
     "prettier": "npx prettier --write . ",
     "eslint": "./node_modules/.bin/eslint .",
     "test": "npx tape test/*-test.js",
     "posttest": "tap --coverage-report=text-lcov | codecov"
-
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/sambacha/git-sz.git"
+    "url": "git+ssh://git@github.com/sambacha/gitsz.git"
   },
   "keywords": [
     "git",
@@ -30,9 +29,9 @@
   "author": "sambacha  <sambacha@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sambacha/git-sz/issues"
+    "url": "https://github.com/sambacha/gitsz/issues"
   },
-  "homepage": "https://github.com/sambacha/git-sz#readme",
+  "homepage": "https://github.com/sambacha/gitsz#readme",
   "dependencies": {
     "async": "^3.0.0",
     "yargs": "^16.1.0"

@@ -83,7 +83,7 @@ source code as a particular git commit.
     Good Git-EVTag-v0-SHA512 hash
 ```
 
-##### git-sz
+##### gitsz
 
 ```bash
     $ gitsz hash
