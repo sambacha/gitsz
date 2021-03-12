@@ -38,6 +38,6 @@
   "devDependencies": {
     "eslint": "7.21.0",
     "rimraf": "3.0.2",
-    "tape": "5.2.1"
+    "tape": "5.2.2"
   }
 }
