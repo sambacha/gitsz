@@ -1,12 +1,19 @@
 const stream = require('stream');
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'spawn'.
 const { spawn } = require('child_process');
 
+// @ts-expect-error ts-migrate(2451) FIXME: Cannot redeclare block-scoped variable 'gst'.
 const gst = require('../gitsz');
 
+// @ts-expect-error ts-migrate(2300) FIXME: Duplicate identifier 'this'.
 function Batch(dir) {
+  // @ts-expect-error ts-migrate(2300) FIXME: Duplicate identifier 'this'.
   this.dir = dir;
+  // @ts-expect-error ts-migrate(2300) FIXME: Duplicate identifier 'this'.
   // TODO(indutny): symlinks?
+  // @ts-expect-error ts-migrate(2300) FIXME: Duplicate identifier 'this'.
   this.proc = spawn(gst.GIT, ['cat-file', '--batch'], {
+    // @ts-expect-error ts-migrate(2300) FIXME: Duplicate identifier 'this'.
     stdio: ['pipe', 'pipe', null],
     cwd: this.dir,
   });
