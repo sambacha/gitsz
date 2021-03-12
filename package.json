@@ -34,6 +34,7 @@
   "homepage": "https://github.com/sambacha/gitsz#readme",
   "dependencies": {
     "async": "^3.0.0",
+    "ts-migrate": "^0.1.16",
     "yargs": "^16.1.0"
   },
   "devDependencies": {
