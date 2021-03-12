@@ -1,6 +1,6 @@
 {
   "name": "gitsz",
-  "version": "1.0.3",
+  "version": "3.0.3",
   "description": "Git tags with higher level of security",
   "main": "lib/gitsz.js",
   "bin": {
