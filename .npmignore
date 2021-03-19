@@ -1,0 +1,5 @@
+renovate.json
+.github/
+test/
+.prettier*
+.eslint*
