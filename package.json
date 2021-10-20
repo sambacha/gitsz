@@ -9,8 +9,8 @@
   "scripts": {
     "prettier": "npx prettier --write . ",
     "eslint": "npx eslint lib/**/*.js",
-    "test": "CODECOV_TOKEN='23544ffd-233e-4f44-9482-2d948de67155' npx tape test/*-test.js",
-    "posttest": "CODECOV_TOKEN='23544ffd-233e-4f44-9482-2d948de67155' tap --coverage-report=text-lcov | codecov"
+    "test": "npx nyc tape test/*.js | ./node_modules/.bin/tap-nyc",
+    "posttest": "CODECOV_TOKEN='23544ffd-233e-4f44-9482-2d948de67155' nyc tape tests/*.js | tap-nyc | codecov"
   },
   "repository": {
     "type": "git",
@@ -43,6 +43,7 @@
     "nyc": "15.1.0",
     "prettier": "^2.4.1",
     "rimraf": "3.0.2",
+    "tap-nyc": "^1.0.3",
     "tape": "5.3.1"
   }
 }
