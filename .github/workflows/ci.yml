@@ -2,33 +2,38 @@ name: ci
 
 on: [push, pull_request]
 
+env:
+  CI: true
+  FORCE_COLOR: 2
+
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  pipeline:
+    name: Node ${{ matrix.node }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
 
     strategy:
+      fail-fast: false
       matrix:
-        node-version: ["14.x"]
+        node: ['14.x', '16.x']
+        os: ['ubuntu-latest', 'macos-latest']
 
     steps:
-      - uses: actions/checkout@v2.3.4
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2.4.0
+      - name: Clone repository
+        uses: actions/checkout@v2.3.5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2.4.1
         with:
-          node-version: ${{ matrix.node-version }}
-      - uses: actions/checkout@master
+          node-version: ${{ matrix.node }}
+          cache: 'npm'
+
+      - name: Install npm dependencies
+        run: npm install
+        id: install
+
       - uses: codecov/codecov-action@v2
-      - uses: actions/cache@v2.1.6
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - name: npm install, build, and test
-        run: |
-          npm install codecov -g
-          npm install
-          npm test
-          codecov
+      - name: Run test
+        run: npm run-script test
+        id: test
         env:
           CI: true
