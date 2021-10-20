@@ -8,18 +8,27 @@ jobs:
 
     strategy:
       matrix:
-        node-version: ["12.x", "14.x"]
+        node-version: ["14.x"]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v2.4.0
         with:
           node-version: ${{ matrix.node-version }}
+      - uses: actions/checkout@master
+      - uses: codecov/codecov-action@v2
+      - uses: actions/cache@v2.1.6
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       - name: npm install, build, and test
         run: |
           npm install codecov -g
           npm install
           npm test
+          codecov
         env:
           CI: true
