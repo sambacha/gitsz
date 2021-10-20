@@ -129,9 +129,9 @@ into a resulting `Git-EVTag-v0-SHA512: ...` SHA512 digest.
 
 ## Implementation and Contributors
 
-Largely inspired by:
+Fork from [https://github.com/indutny/git-secure-tag](https://github.com/indutny/git-secure-tag)
 
-[@gwalters/git-evtag](https://github.com/cgwalters/git-evtag)
+Largely inspired by: [@gwalters/git-evtag](https://github.com/cgwalters/git-evtag)
 
 Fedor Indutny, 2016.
 
