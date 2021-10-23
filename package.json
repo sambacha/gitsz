@@ -1,6 +1,6 @@
 {
-  "name": "gitsz",
-  "version": "3.1.0",
+  "name": "git-szsz",
+  "version": "3.1.1",
   "description": "Git tags with higher level of security",
   "main": "lib/gitsz.js",
   "bin": {
@@ -9,8 +9,8 @@
   "scripts": {
     "prettier": "npx prettier --write . ",
     "eslint": "npx eslint lib/**/*.js",
-    "test": "npx nyc tape test/*.js | ./node_modules/.bin/tap-nyc",
-    "posttest": "CODECOV_TOKEN='23544ffd-233e-4f44-9482-2d948de67155' nyc tape tests/*.js | tap-nyc | codecov"
+    "test": "npx tape test/*-test.js",
+    "posttest": "CODECOV_TOKEN='23544ffd-233e-4f44-9482-2d948de67155' tap --coverage-report=text-lcov | codecov"
   },
   "repository": {
     "type": "git",
@@ -33,15 +33,15 @@
   },
   "homepage": "https://github.com/sambacha/gitsz#readme",
   "dependencies": {
-    "async": "^3.2.1",
-    "yargs": "^17.2.1"
+    "async": "3.2.1",
+    "yargs": "17.2.1"
   },
   "devDependencies": {
     "codecov": "3.8.3",
     "eslint": "^8.0.1",
-    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-prettier": "8.3.0",
     "nyc": "15.1.0",
-    "prettier": "^2.4.1",
+    "prettier": "2.4.1",
     "rimraf": "3.0.2",
     "tap-spec": "^5.0.0",
     "tape": "5.3.1"
