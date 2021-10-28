@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/sambacha/gitsz#readme",
   "dependencies": {
-    "async": "3.2.1",
+    "async": "3.2.2",
     "yargs": "17.2.1"
   },
   "devDependencies": {
