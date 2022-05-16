@@ -34,7 +34,7 @@
   "homepage": "https://github.com/sambacha/gitsz#readme",
   "dependencies": {
     "async": "3.2.1",
-    "yargs": "17.2.1"
+    "yargs": "17.5.1"
   },
   "devDependencies": {
     "codecov": "3.8.3",
